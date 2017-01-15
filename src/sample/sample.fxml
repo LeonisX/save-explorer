@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <right>
+      <ListView fx:id="savesListView" prefHeight="200.0" prefWidth="440.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+       <HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+           <Button mnemonicParsing="false" onAction="#compareButtonClick" text="Compare" />
+         <TextField fx:id="commentTextField" prefHeight="26.0" prefWidth="320.0" />
+           <Button mnemonicParsing="false" onAction="#saveButtonClick" text="Save" />
+       </HBox>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ScrollPane fx:id="mainScrollPane" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+       <VBox BorderPane.alignment="CENTER">
+           <HBox alignment="CENTER" spacing="5.0">
+               <Button mnemonicParsing="false" onAction="#openButtonClick" text="Open" />
+               <Label fx:id="saveFileNameLabel" />
+             <Button mnemonicParsing="false" onAction="#reloadButtonClick" text="Reload" />
+           </HBox>
+           <HBox spacing="5.0">
+               <CheckBox fx:id="showKnownAddressesCheckBox" mnemonicParsing="false" selected="true" text="Show known adddresses" />
+           </HBox>
+       </VBox>
+   </top>
+</BorderPane>
