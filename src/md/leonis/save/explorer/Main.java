@@ -1,4 +1,4 @@
-package sample;
+package md.leonis.save.explorer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

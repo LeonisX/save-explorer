@@ -1,4 +1,4 @@
-package sample;
+package md.leonis.save.explorer;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
