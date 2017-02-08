@@ -9,23 +9,38 @@ public class Geo implements Comparable<Geo> {
     private Planets planet;
     private String name;
 
-    // 0x400: 00
-    private int x;        // 0x401-0x402  X coordinate on Map. Step on right: 0006 → 1006 → 2006
+    // 0x400: 00 - X, but inverse. In SS always 00. Probably offset in tilemap
+    private int x;        // 0x401-0x402  X coordinate on Map. Step on right: 0006 → 1006 → 2006. 401 max B0
     // 0x403: 00
-    // 0x404: 00
-    private int y;        // 0x405-0x406  Y coordinate on Map. Examples: 0001, 5001
+    // 0x404: 00 - Y, but inverse. In SS always 00. Probably offset in tilemap
+    private int y;        // 0x405-0x406  Y coordinate on Map. Examples: 0001, 5001. 405 max B0
     // 0x407: 00
     private int map;    // 0x408-0x409  Map #. Examples: 00 00 — Palma, 04 04 — Camineet
+    // map: 00 00
+    // 00 = Palma
+    // 01 = Motavia
+    // 02 = Dezoris
+    // 04 = Camineet, Parolit
+    // 05 = Gothic, Eppi, Loar, Abion
+    // 06 = Drasgow, Shion
+    // 07 = Paseo, Uzo, Casba, Sopia
+    // 08 = Skure, Twintown (entrances)
+    // 09 = Skure, Twintown
+    // 0A = Air Castle
+    // Second number - # of map (0x00 - 0x17)
+
+
     private int direction;// 0x40A        Direction in dungeon. Default = 0; To right: 1 → 2 → 3. Contains after exit from dungeon
     // 0x40B: 00
     private int room;   // 0x40C        Room # in dungeon; Both X (4-bit), Y (4-bit). Examples: 5E
     private int dungeon;// 0x40D        Dungeon #. Examples: Medusa's Cave, outdoor: 00; Camineet Warehouse: 02
+    // (00-3A) Interesting things: some dungeons intersects (Scion/Naula caves, ...)
     private int transport;// 0x40E        00 -> 08 — hovercraft, 04 — landrover, 0C - ice digger
     private int animation1;// 0x40F        00..03 - transport animation? set 00
     private int animation2;// 0x410        00..03 - transport animation? set 00
     private int y2;       // 0x411-0x412  Y coordinate on Map. Same as 0x405-0x406
     private int x2;       // 0x413-0x414  X coordinate on Map. Same as 0x401-0x402
-    private int color;    // 0x415        Dungeon color. Examples: 02: light green, 03: blue? 04: blue, 05: light blue, 06: yellow, 07: pink,...
+    private int color;    // 0x415        Dungeon color. (00-0A) Examples: 02: light green, 03: blue? 04: blue, 05: light blue, 06: yellow, 07: pink,...
     private int type;     // 0x416        Type of environment. 0D: outdoor, cities; 0B: dungeons
     private int church;   // 0x417        Church # (for teleport); Examples: 00: no; 01: Camineet, 02: Gothic, 03: Loar, ...
     // 0x418-4FF: 00
