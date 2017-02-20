@@ -67,14 +67,14 @@ public class Geo implements Comparable<Geo> {
     }
 
     public String toCSV() {
-        return String.format("\"%04X\"", x) + "; " +
-                String.format("\"%04X\"", y) + "; " +
-                String.format("\"%04X\"", map) + "; " +
-                String.format("\"%02X\"", dungeon) + "; " +
-                String.format("\"%02X\"", room) + "; " +
-                String.format("\"%02X\"", direction) + "; " +
-                String.format("\"%02X\"", color) + "; " +
-                String.format("\"%02X\"", type) + "; " +
+        return String.format("\"%04X\"", x) + ";" +
+                String.format("\"%04X\"", y) + ";" +
+                String.format("\"%04X\"", map) + ";" +
+                String.format("\"%02X\"", dungeon) + ";" +
+                String.format("\"%02X\"", room) + ";" +
+                String.format("\"%02X\"", direction) + ";" +
+                String.format("\"%02X\"", color) + ";" +
+                String.format("\"%02X\"", type) + ";" +
                 name;
     }
 
